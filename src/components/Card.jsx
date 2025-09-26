@@ -1,21 +1,17 @@
 import React from 'react'
 
-function Card() {
-  const url = [
-    "https://media.themoviedb.org/t/p/w220_and_h330_face/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
-    "url",
-
-  ];
+function Card({ movieTitle, movieImage }) {
+  const baseImageUrl = "https://media.themoviedb.org/t/p/w220_and_h330_face";
 
   return (
-    <div className='flex flex-col'>
+    <div className='flex flex-col items-center'>
       <div
         className='w-[220px] h-[330px] rounded-xl bg-coverbg-center flex items-center justify-center '
-        style={{ backgroundImage: `url(${url[0]})` }}
+        style={{ backgroundImage: `url(${baseImageUrl}${movieImage})` }}
       >
-        <div className="text-white text-3xl w-full text-center bg-gray-600/70 rounded-xl">
-          The Dark Knight
-        </div>
+      </div>
+      <div className="text-black text-xl w-[220px] text-center">
+        {movieTitle}
       </div>
     </div>
   )

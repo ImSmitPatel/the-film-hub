@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios';
+
 import Banner from './Banner'
 import Card from './Card'
 
 function Movies() {
+
+  const api_key = import.meta.env.VITE_TMDB_API_KEY;
+
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+
+    async function fetchMovies() {
+      const response = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=en-US&page=1`);
+      setMovies(response.data.results);
+    }
+
+    fetchMovies();
+  }, [])
+
   return (
     <div>
       <Banner />
@@ -10,20 +27,11 @@ function Movies() {
         <h1>Trending Movies</h1>
       </div>
       <div className='flex flex-wrap gap-8 m-18 justify-center'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {
+          movies && movies.map((movie) => (
+            <Card key={movie.id} movieTitle={movie.title} movieImage={movie.poster_path} />
+          ))
+        }
       </div>
     </div>
   )
