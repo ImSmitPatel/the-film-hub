@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 
-import Banner from './Banner'
+import HeroBanner from './HeroBanner'
 import Card from './Card'
 
 function Movies() {
@@ -22,7 +22,7 @@ function Movies() {
 
   return (
     <div>
-      <Banner />
+      <HeroBanner />
       <div className='text-3xl font-bold text-center mt-8 mb-5'>
         <h1>Trending Movies</h1>
       </div>

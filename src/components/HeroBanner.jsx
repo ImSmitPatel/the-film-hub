@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Banner() {
+function HeroBanner() {
   const url = "https://image.tmdb.org/t/p/original/1RgPyOhN4DRs225BGTlHJqCudII.jpg";
   return (
     <div
@@ -14,4 +14,4 @@ function Banner() {
   )
 }
 
-export default Banner
+export default HeroBanner
