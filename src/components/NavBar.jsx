@@ -1,20 +1,39 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import logo from '../assets/tfh-logo.png'
+import { NavLink } from 'react-router-dom';
+import logo from '../assets/tfh-logo.png';
+
+const navLinks = [
+  { path: '/', label: 'Movies' },
+  { path: '/tv', label: 'TV Shows' },
+  { path: '/watchlist', label: 'Watchlist' },
+];
 
 function NavBar() {
   return (
-    <div className="p-[10px]">
-      <div className='flex items-center p-2 bg-black mx-auto rounded-xl w-full'>
-        <img className='w-[80px] mr-10' src={logo} alt="The Film Hub" />
-        <div className="flex space-x-6">
-          <Link className='text-white' to='/'>Movies</Link>
-          <Link className='text-white' to='/tv'>TV Shows</Link>
-          <Link className='text-white' to='/watchlist'>Watchlist</Link>
-        </div>
-      </div>
-    </div>
-  )
+    <header className="p-4">
+      <nav className='flex items-center justify-between bg-black w-full mx-auto p-4 rounded-xl shadow-lg'>
+
+        <NavLink to="/">
+          <img className='w-20' src={logo} alt="The Film Hub Home" />
+        </NavLink>
+
+        <ul className="flex items-center space-x-6">
+          {navLinks.map((link) => (
+            <li key={link.path}>
+              <NavLink
+                to={link.path}
+                className={({ isActive }) =>
+                  `text-lg font-medium transition-colors duration-300
+                   ${isActive ? 'text-yellow-400' : 'text-white hover:text-gray-300'}`
+                }
+              >
+                {link.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+  );
 }
 
-export default NavBar
+export default NavBar;
