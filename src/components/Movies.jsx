@@ -23,10 +23,10 @@ function Movies() {
   return (
     <div>
       <HeroBanner />
-      <div className='text-3xl font-bold text-center mt-8 mb-5'>
+      <div className='text-3xl font-bold text-center mt-10'>
         <h1>Trending Movies</h1>
       </div>
-      <div className='flex flex-wrap gap-8 m-18 justify-center'>
+      <div className='flex flex-wrap gap-8 mt-5 m-18 justify-center'>
         {
           movies && movies.map((movie) => (
             <Card key={movie.id} movieTitle={movie.title} movieImage={movie.poster_path} />

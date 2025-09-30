@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Card({ movieTitle, movieImage }) {
-  const BASE_IMAGE_URL = "https://media.themoviedb.org/t/p/w220_and_h330_face";
+  const BASE_IMAGE_URL = "https://image.tmdb.org/t/p/w220_and_h330_face";
 
   return (
     <div className='flex flex-col items-center'>
