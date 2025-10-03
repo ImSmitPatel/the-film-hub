@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import HeroBanner from './HeroBanner'
 import Card from './Card'
+import Pagination from './Pagination';
 
 function Movies() {
 
@@ -33,6 +34,7 @@ function Movies() {
           ))
         }
       </div>
+      <Pagination />
     </div>
   )
 }
