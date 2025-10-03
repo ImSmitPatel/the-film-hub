@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react'; // Using icons for a cleaner look
+import { ChevronLeft, ChevronRight, Info, ListPlus } from 'lucide-react'; // Using icons for a cleaner look
 
 const trendingMovies = [
   {
@@ -65,9 +65,15 @@ function HeroBannerCarousel() {
         <div className="max-w-3xl space-y-4 animate-fade-in-up">
           <h1 className="text-3xl md:text-5xl font-bold">{currentMovie.title}</h1>
           <p className="text-sm md:text-base line-clamp-3">{currentMovie.overview}</p>
-          <button className="px-6 py-2 bg-white text-black font-semibold rounded-md hover:bg-gray-200 transition-colors">
-            More Info
-          </button>
+          <div className='flex gap-4'>
+            <button className="flex gap-2 px-6 py-2 bg-white text-black font-semibold rounded-md hover:bg-gray-400 transition-colors">
+              More Info <Info />
+            </button>
+            <button className="flex gap-2 px-6 py-2 bg-[#FE000C] text-white font-semibold rounded-md hover:bg-red-800 transition-colors">
+              Add to Watchlist <ListPlus />
+            </button>
+          </div>
+
         </div>
       </div>
 

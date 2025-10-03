@@ -23,7 +23,7 @@ function NavBar() {
                 to={link.path}
                 className={({ isActive }) =>
                   `text-lg font-medium transition-colors duration-300
-                   ${isActive ? 'text-yellow-400' : 'text-white hover:text-gray-300'}`
+                   ${isActive ? 'text-[#FE000C]' : 'text-white hover:text-gray-300'}`
                 }
               >
                 {link.label}
