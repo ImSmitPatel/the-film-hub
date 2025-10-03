@@ -2,7 +2,8 @@ import { NavLink } from 'react-router-dom';
 import logo from '../assets/tfh-logo.png';
 
 const navLinks = [
-  { path: '/', label: 'Movies' },
+  { path: '/', label: 'Home' },
+  { path: '/movies', label: 'Movies' },
   { path: '/tv', label: 'TV Shows' },
   { path: '/watchlist', label: 'Watchlist' },
 ];
